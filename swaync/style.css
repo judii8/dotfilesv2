@@ -1,0 +1,90 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-weight: bold;
+}
+
+/* THE ANIMATION FIX: forces notifications to slide in cleanly from the right */
+@keyframes slideIn {
+    from { transform: translateX(360px); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); }
+    to { transform: translateX(360px); }
+}
+
+/* THE FLOATING POPUP NOTIFICATION CARDS */
+.notification {
+    animation-name: slideIn;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-out;
+    
+    background: #111218;
+    color: #a3a3a3;
+    /* lock in your signature 5px sharp corner look */
+    border-radius: 5px; 
+    /* match your fuzzel border line exactly */
+    border: 2px solid #7aa2f7; 
+    padding: 14px;
+    margin: 8px;
+}
+
+.notification.closed {
+    animation-name: slideOut;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in;
+}
+
+.notification-content {
+    margin: 0;
+}
+
+.summary {
+    font-size: 14px;
+    color: #7aa2f7; /* header text matches active blue */
+}
+
+.body {
+    font-size: 12px;
+    color: #a3a3a3;
+}
+
+/* ========================================================================= */
+/* THE CONTROL CENTER PANEL (The fly-out main container) */
+/* ========================================================================= */
+
+.control-center {
+    background: #111218;
+    color: #a3a3a3;
+    border-left: 2px solid #232433; /* dim divider line matching waybar */
+    padding: 12px;
+}
+
+/* individual notifications inside the history panel list */
+.control-center .notification {
+    border: 1px solid #232433; /* subtle interior boxes instead of glowing blue */
+    background: #16171f;
+    margin: 6px 0;
+}
+
+/* control center main title headers */
+.control-center-title {
+    font-size: 16px;
+    color: #7aa2f7;
+    margin: 10px;
+}
+
+/* the "clear all" button */
+.widget-title button {
+    background: #232433;
+    color: #a3a3a3;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+}
+
+.widget-title button:hover {
+    background: #7aa2f7;
+    color: #111218;
+}

@@ -1,0 +1,38 @@
+# layout and mechanics
+ignore-empty-password
+show-failed-attempts
+clock
+timestr=%R
+datestr=%a, %b %e
+
+# the "cool" effects (blurring your current windows)
+screenshots
+effect-blur=7x5
+effect-vignette=0.5:0.5
+
+# styling the lock ring & text
+indicator-radius=120
+indicator-thickness=10
+font="JetBrainsMono NF"
+font-size=16
+
+# dark cyber color palette (glowing accents)
+color=00000000
+inside-color=11111b80
+outside-color=b4befe
+key-hl-color=a6e3a1
+bs-hl-color=f38ba8
+
+# status ring shifts
+inside-ver-color=89b4fa80
+outside-ver-color=89b4fa
+inside-wrong-color=f38ba880
+outside-wrong-color=f38ba8
+inside-clear-color=f5c2e780
+outside-clear-color=f5c2e7
+
+# text colors inside the ring
+text-color=cdd6f4
+text-ver-color=cdd6f4
+text-wrong-color=f38ba8
+text-clear-color=f5c2e7

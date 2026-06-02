@@ -1,0 +1,105 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: #181111;
+    color: #a3a3a3;
+}
+
+/* flat workspace layout with zero container padding bloat */
+#workspaces {
+    margin: 0;
+    padding: 0;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    margin: 0;
+    color: #613b3b; /* dim gray-blue for completely hidden/inactive numbers */
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* any workspace currently visible on an output gets a cleaner neutral gray */
+#workspaces button.active {
+    color: #806262;
+}
+
+/* THE FIX: the single workspace you are actively using lights up blue */
+#workspaces button.focused {
+    color: #fc4103; /* forces the active blue text to stick */
+    background: transparent;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+    background: transparent;
+}
+
+#window {
+    padding-left: 12px;
+    color: #a3a3a3;
+}
+
+/* added network and battery to the global padding rules */
+#cpu,
+#memory,
+#network,
+#battery,
+#clock,
+#pulseaudio,
+#custom-weather,
+#custom-power {
+    padding: 0 10px;
+    background-color: transparent;
+    color: #a3a3a3;
+}
+
+/* specific network states */
+#network.disconnected {
+    color: #f7768e; /* clean red if your wifi drops */
+}
+
+/* specific battery states */
+#battery.charging, #battery.plugged {
+    color: #9ece6a; /* nice green when charging */
+}
+
+#battery.critical:not(.charging) {
+    color: #f7768e;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* matching the screenshot's precise pipe line boundaries */
+#cpu,
+#memory,
+#network,
+#battery,
+#clock.date,
+#clock.time,
+#pulseaudio,
+#custom-weather {
+    border-right: 1px solid #232433;
+}
+
+#custom-power {
+    color: #a3a3a3;
+    padding-right: 12px;
+}
+
+/* low battery warning blink animation */
+@keyframes blink {
+    to {
+        color: #111218;
+        background-color: #f7768e;
+    }
+}

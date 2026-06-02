@@ -1,0 +1,187 @@
+include "monitor.kdl"
+include "binds.kdl"
+include "anims.kdl"
+include "input.kdl"
+
+// This config is in the KDL format: https://kdl.dev
+// "/-" comments out the following node.
+// Check the wiki for a full description of the configuration:
+// https://niri-wm.github.io/niri/Configuration:-Introduction
+
+// Settings that influence how windows are positioned and sized.
+// Find more information on the wiki:
+// https://niri-wm.github.io/niri/Configuration:-Layout
+layout {
+    // Tight gaps to bring windows closer together
+    gaps 24
+
+    // When to center a column when changing focus, options are:
+    // - "never", default behavior, focusing an off-screen column will keep at the left
+    //   or right edge of the screen.
+    // - "always", the focused column will always be centered.
+    // - "on-overflow", focusing a column will center it if it doesn't fit
+    //   together with the previously focused column.
+    center-focused-column "never"
+
+    // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
+    preset-column-widths {
+        // Proportion sets the width as a fraction of the output width, taking gaps into account.
+        // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
+        // The default preset widths are 1/3, 1/2 and 2/3 of the output.
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+
+        // Fixed sets the width in logical pixels exactly.
+        // fixed 1920
+    }
+
+    // You can also customize the heights that "switch-preset-window-height" (Mod+Ctrl+Shift+R) toggles between.
+    // preset-window-heights { }
+
+    // You can change the default width of the new windows.
+    default-column-width { proportion 0.5; }
+    // If you leave the brackets empty, the windows themselves will decide their initial width.
+    // default-column-width {}
+
+    // Width set to 0 to completely eliminate colored edges around windows
+    border {
+        width 3
+        //active-color "#7aa2f7"
+        active-color "#fc4103"
+        inactive-color "#232433"
+        urgent-color "#ff3333"
+    }
+
+    // Disabled focus ring since we have crisp active borders enabled above
+    focus-ring {
+        off
+    }
+
+    // Shadows turned off to keep the modern flat monochrome layout clean
+    shadow {
+        //off
+    }
+
+    // Struts shrink the area occupied by windows, similarly to layer-shell panels.
+    // You can think of them as a kind of outer gaps. They are set in logical pixels.
+    // Left and right struts will cause the next window to the side to always be visible.
+    // Top and bottom struts will simply add outer gaps in addition to the area occupied by
+    // layer-shell panels and regular gaps.
+    struts {
+        // left 64
+        // right 64
+        // top 64
+        // bottom 64
+    }
+}
+
+// Add lines like this to spawn processes at startup.
+// Note that running niri as a session supports xdg-desktop-autostart,
+// which may be more convenient to use.
+// See the binds section below for more spawn examples.
+
+// This line starts waybar, a commonly used bar for Wayland compositors.
+spawn-at-startup "waybar"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+spawn-at-startup "swaync"
+spawn-at-startup "discord"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
+//spawn-at-startup "openrgb"
+spawn-at-startup "swayosd-server"
+
+hotkey-overlay {
+    // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
+    // skip-at-startup
+}
+
+window-rule {
+    match app-id="^org\\.gnome\\.Calendar$"
+    open-floating true
+    open-focused true
+}
+
+window-rule {
+    match app-id="^org\\.gnome\\.Calculator$"
+    open-floating true
+    open-focused true
+}
+
+window-rule {
+    match app-id="^org\\.gnome\\.Weather$"
+    open-floating true
+    open-focused true
+}
+
+window-rule {
+    match app-id="^org\\.pulseaudio\\.pavucontrol$"
+    open-floating true
+    open-focused true
+}
+
+window-rule {
+    match app-id="^org\\.gnome\\.Characters$"
+    open-floating true
+    open-focused true
+}
+
+// Ask clients to omit client-side decorations so niri draws uniform borders/corners
+prefer-no-csd
+
+// You can change the path where screenshots are saved.
+// A ~ at the front will be expanded to the home directory.
+// The path is formatted with strftime(3) to give you the screenshot date and time.
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// You can also set this to null to disable saving screenshots to disk.
+// screenshot-path null
+
+// Layer rules to make awww-daemon stay stationary behind niri's overview mode
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+// Window rules let you adjust behavior for individual windows.
+// Find more information on the wiki:
+// https://niri-wm.github.io/niri/Configuration:-Window-Rules
+
+// Work around WezTerm's initial configure bug
+// by setting an empty default-column-width.
+window-rule {
+    // This regular expression is intentionally made as specific as possible,
+    // since this is the default config, and we want no false positives.
+    // You can get away with just app-id="wezterm" if you want.
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// Example: block out two password managers from screen capture.
+// (This example rule is commented out with a "/-" in front.)
+/-window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+// Smooth rounded window corners bumped to 20 to lock in the pill aesthetics
+window-rule {
+    geometry-corner-radius 5
+    clip-to-geometry true
+}
+

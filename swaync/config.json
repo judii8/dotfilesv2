@@ -1,0 +1,22 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "replacements": {},
+  "notification-visibility": {},
+  "notification-2fa-supported": true,
+  "notification-window-width": 350,
+  "timeout": 5,
+  "timeout-low": 5,
+  "timeout-critical": 5,
+  
+  "fit-to-screen": true,
+  "keyboard-shortcuts": true,
+  "image-visibility": "always",
+  "transition-time": 200,
+  "hide-on-clear": true,
+  "hide-on-action": true,
+  "script-fail-fn": false
+}
