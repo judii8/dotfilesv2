@@ -13,7 +13,7 @@ include "input.kdl"
 // https://niri-wm.github.io/niri/Configuration:-Layout
 layout {
     // Tight gaps to bring windows closer together
-    gaps 24
+    gaps 18
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -46,9 +46,9 @@ layout {
 
     // Width set to 0 to completely eliminate colored edges around windows
     border {
-        width 3
+        width 2
         //active-color "#7aa2f7"
-        active-color "#fc4103"
+        active-color "#fc5203"
         inactive-color "#232433"
         urgent-color "#ff3333"
     }
