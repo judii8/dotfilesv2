@@ -5,8 +5,8 @@
     "spacing": 0,
 
     "modules-left": ["niri/workspaces", "niri/window"],
-    "modules-center": [],
-    "modules-right": ["network", "battery", "cpu", "memory", "custom/weather", "clock#date", "clock#time", "pulseaudio", "custom/power"],
+    "modules-center": ["disk", "cpu", "memory"],
+    "modules-right": ["network", "battery", "custom/weather", "clock#date", "clock#time", "pulseaudio", "custom/power"],
 
     "niri/workspaces": {
         "format": "{value}",

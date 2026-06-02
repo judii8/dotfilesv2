@@ -44,13 +44,12 @@ layout {
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
-    // Width set to 0 to completely eliminate colored edges around windows
+    // Window borders matched perfectly to the wallhaven-rrqpqw.jpg winter aesthetic
     border {
         width 2
-        //active-color "#7aa2f7"
-        active-color "#fc5203"
-        inactive-color "#232433"
-        urgent-color "#ff3333"
+        active-color "#7e96bd"   // your new frost-blue accent color
+        inactive-color "#2d3748" // dark industrial iron tone from the waybar separators
+        urgent-color "#e0533c"   // railway sign warning orange-red
     }
 
     // Disabled focus ring since we have crisp active borders enabled above
@@ -184,4 +183,3 @@ window-rule {
     geometry-corner-radius 5
     clip-to-geometry true
 }
-

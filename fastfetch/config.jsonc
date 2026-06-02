@@ -4,23 +4,22 @@
         "type": "auto",
         "source": "~/.config/fastfetch/arch_dots.txt",
         "padding": {
-            "top": 2,     // shoves the text down a bit to line up with the stats
+            "top": 2,
             "right": 4
         },
         "color": {
-            "1": "red",  // colors the primary ascii lines blue
-            "2": "cyan"   // handles any secondary shading accent
+            "1": "38;2;126;150;189",  // #7e96bd mapped to true color ansi
+            "2": "38;2;148;163;184"   // #94a3b8 for secondary shading accent
         }
     },
     "display": {
         "separator": " ❯ ",
         "color": {
-            "keys": "red",
-            "title": "red"
+            "keys": "38;2;126;150;189",   // frost-blue for the module keys
+            "title": "38;2;126;150;189"  // frost-blue for your username/hostname
         }
     },
     "modules": [
-        // padding blocks to align the system text directly in the vertical middle of the graphic
         { "type": "custom", "format": "" },
         { "type": "custom", "format": "" },
         
@@ -44,10 +43,6 @@
         {
             "type": "gpu",
             "key": "󰍛 gpu     "
-        },
-        {
-            "type": "kernel",
-            "key": " kernel  "
         },
         {
             "type": "uptime",
