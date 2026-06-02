@@ -16,7 +16,7 @@
         "separator": " ❯ ",
         "color": {
             "keys": "38;2;126;150;189",   // frost-blue for the module keys
-            "title": "38;2;126;150;189"  // frost-blue for your username/hostname
+            "title": "38;2;126;150;189"  // frost-blue for username/hostname
         }
     },
     "modules": [
