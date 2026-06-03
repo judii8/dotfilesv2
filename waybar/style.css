@@ -53,6 +53,7 @@ window#waybar {
 #memory,
 #disk,
 #network,
+#power-profiles-daemon,
 #battery,
 #clock,
 #pulseaudio,
@@ -87,6 +88,7 @@ window#waybar {
 #cpu,
 #memory,
 #network,
+#power-profiles-daemon,
 #battery,
 #clock.date,
 #clock.time,
@@ -98,6 +100,19 @@ window#waybar {
 #custom-power {
     color: #94a3b8;
     padding-right: 12px;
+}
+
+/* dynamic styling for the power profile modes */
+#power-profiles-daemon.performance {
+    color: #e0533c; /* industrial warning red */
+}
+
+#power-profiles-daemon.balanced {
+    color: #7e96bd; /* cool frost blue matching your focused workspace */
+}
+
+#power-profiles-daemon.power-saver {
+    color: #a7f3d0; /* soft mint eco green */
 }
 
 /* low battery warning blink animation */

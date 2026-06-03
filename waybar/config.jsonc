@@ -6,7 +6,7 @@
 
     "modules-left": ["niri/workspaces", "niri/window"],
     "modules-center": ["disk", "cpu", "memory"],
-    "modules-right": ["network", "battery", "custom/weather", "clock#date", "clock#time", "pulseaudio", "custom/power"],
+    "modules-right": ["network", "power-profiles-daemon", "battery", "custom/weather", "clock#date", "clock#time", "pulseaudio", "custom/power"],
 
     "niri/workspaces": {
         "format": "{value}",
@@ -39,6 +39,18 @@
         "format-disconnected": "󰤮 Disconnected",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "tooltip-format-wifi": "{essid} ({signaldBm}dBm) "
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "power profile: {profile}\ndriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "󰓅",
+            "performance": "󰓅",
+            "balanced": "󰾅",
+            "power-saver": "󰾆"
+        }
     },
 
     "battery": {
