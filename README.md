@@ -5,7 +5,7 @@
 - **OS:** Arch Linux
 - **WM:** Niri
 
-- Wallpaper from [Wallhaven](https://wallhaven.cc/w/rrqpqw)
+Wallpaper from [Wallhaven](https://wallhaven.cc/w/rrqpqw)
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
 - **Shell**: bash
 - **Editor**: vscodium
