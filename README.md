@@ -1,31 +1,15 @@
-# 🌌 dotfiles
+# Dotfiles
 
-<p align="center">
-  <img src="screenshot.png" alt="desktop preview in progress" width="800"/>
-</p>
+## Info:
 
-## 🛠️ tech stack
+- **OS:** Arch Linux
+- **WM:** Niri
 
-| component | choice |
-| :--- | :--- |
-| **os** | arch linux 🚀 |
-| **wm** | [niri](https://github.com/niri-wm/niri) |
-| **terminal** | [kitty](https://github.com/kovidgoyal/kitty) |
-| **shell** | bash |
-| **editor** | vscodium |
-| **browser** | firefox (w/ [nyan cat theme](https://addons.mozilla.org/en-US/firefox/addon/nyan-cat-animated/)) 🌈 |
-
----
-
-## 🎨 aesthetics & apps
-
-* **wallpaper:** [wallhaven (choo choo edition)](https://wallhaven.cc/w/rrqpqw) 🚂
-* **fonts:** `FiraCode Nerd Font Mono` + `JetBrains Mono` (for that clean italic look)
-* **audio viz:** [cava](https://github.com/karlstav/cava) 📊
-* **pdf viewer:** [papers](https://apps.gnome.org/Papers/) (gnome)
-
----
-
-> [!note]
-> niri is a scroll-driven tiling wm. if you're stealing my dotfiles don't forget to check the binds or atleast modify them to your own. tip: mod+return opens kitty
-> put this repo in ~/.dotfiles and symlink the cfgs.
+- Wallpaper from [Wallhaven](https://wallhaven.cc/w/rrqpqw)
+- **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
+- **Shell**: bash
+- **Editor**: vscodium
+- **Font**: FiraCode Nerd Font Mono + JetBrains (for italic text)
+- **Browser**: Firefox with [Nyan Cat Theme](https://addons.mozilla.org/en-US/firefox/addon/nyan-cat-animated/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=rating)
+- **Visualizer:** [Cava](https://github.com/karlstav/cava)
+- **PDF Viewer:** [Papers (Gnome)](https://apps.gnome.org/Papers/)

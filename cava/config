@@ -1,0 +1,15 @@
+[general]
+# framerate = 60
+
+[output]
+method = ncurses
+
+[color]
+gradient = 1
+gradient_count = 2
+gradient_color_1 = '#7e96bd'
+gradient_color_2 = '#cbd5e1'
+
+# if you don't like gradient
+# background = '#1c2024'
+# foreground = '#7e96bd'

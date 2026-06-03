@@ -2,7 +2,7 @@ binds {
     Ctrl+Alt+V { spawn "sh" "-c" "cliphist list | head -n 5 | cut -f2- | fuzzel --dmenu --width=60 --lines=5 | cliphist decode | wl-copy && sleep 0.1 && wtype -M ctrl -k v -m ctrl"; }
     Mod+Shift+Q { spawn-sh "bash /home/judi/.scripts/refresh.sh &"; }
     Mod+P { spawn-sh "bash /home/judi/.scripts/powermenu.sh &"; }
-    Mod+L { spawn-sh "swaylock"; }
+    // Mod+L { spawn-sh "swaylock"; }
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+X hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
