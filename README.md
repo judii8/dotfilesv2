@@ -1,7 +1,6 @@
 # 🌌 dotfiles
 
 <p align="center">
-  <!-- replace this with your actual desktop rice screenshot later -->
   <img src="screenshot.png" alt="desktop preview" width="800"/>
 </p>
 
