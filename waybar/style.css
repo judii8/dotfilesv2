@@ -2,45 +2,30 @@
     font-family: "JetBrainsMono Nerd Font", sans-serif;
     font-size: 13px;
     font-weight: bold;
+    border: none;
+    border-radius: 0;
 }
 
 window#waybar {
-    /* dark slate/charcoal from the station overhead structures */
     background-color: #1c2024;
     color: #cbd5e1;
-}
-
-/* flat workspace layout with zero container padding bloat */
-#workspaces {
-    margin: 0;
-    padding: 0;
 }
 
 #workspaces button {
     padding: 0 8px;
     margin: 0;
-    /* dim metallic gray for inactive numbers */
-    color: #4a5568; 
+    color: #4a5568;
     background: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
+    border-bottom: 2px solid transparent;
 }
-
-/* any workspace currently visible on an output gets a cleaner neutral gray */
-#workspaces button.active {
-    color: #94a3b8;
-}
-
-/* the active workspace gets the cool frost-blue accent color */
+#workspaces button.active,
 #workspaces button.focused {
-    color: #7e96bd; 
-    background: transparent;
+    color: #cbd5e1;
+    border-bottom: 2px solid #7e96bd;
 }
-
 #workspaces button:hover {
     color: #ffffff;
-    background: transparent;
+    border-bottom: 2px solid #94a3b8;
 }
 
 #window {
@@ -48,30 +33,52 @@ window#waybar {
     color: #94a3b8;
 }
 
-/* unified padding for all modules, including the new center placements */
 #cpu,
 #memory,
 #disk,
 #network,
 #power-profiles-daemon,
 #battery,
-#clock,
 #pulseaudio,
 #custom-weather,
-#custom-power {
-    padding: 0 10px;
+#custom-power,
+#clock {
+    padding: 0 12px;
     background-color: transparent;
     color: #cbd5e1;
 }
 
-/* specific network states */
-#network.disconnected {
-    color: #e0533c; /* warning red matching the signs */
+#disk,
+#cpu,
+#memory,
+#network,
+#power-profiles-daemon,
+#battery,
+#custom-weather,
+#clock.date,
+#pulseaudio {
+    border-right: 1px solid #2d3748;
 }
 
-/* specific battery states */
-#battery.charging, #battery.plugged {
-    color: #fef08a; /* soft glowing warm white from the train headlights */
+#disk {
+    border-left: 1px solid #2d3748;
+}
+
+#clock.date {
+    padding-right: 10px;
+}
+
+#clock.time {
+    padding-left: 4px;
+}
+
+#network.disconnected {
+    color: #e0533c;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #fef08a;
 }
 
 #battery.critical:not(.charging) {
@@ -83,39 +90,16 @@ window#waybar {
     animation-direction: alternate;
 }
 
-/* precise pipe line boundaries using a dark iron tone */
-#disk,
-#cpu,
-#memory,
-#network,
-#power-profiles-daemon,
-#battery,
-#clock.date,
-#clock.time,
-#pulseaudio,
-#custom-weather {
-    border-right: 1px solid #2d3748;
-}
+#power-profiles-daemon.performance { color: #e0533c; }
+#power-profiles-daemon.balanced    { color: #7e96bd; }
+#power-profiles-daemon.power-saver { color: #a7f3d0; }
 
 #custom-power {
     color: #94a3b8;
-    padding-right: 12px;
+    padding-right: 14px;
+    padding-left: 10px;
 }
 
-/* dynamic styling for the power profile modes */
-#power-profiles-daemon.performance {
-    color: #e0533c; /* industrial warning red */
-}
-
-#power-profiles-daemon.balanced {
-    color: #7e96bd; /* cool frost blue matching your focused workspace */
-}
-
-#power-profiles-daemon.power-saver {
-    color: #a7f3d0; /* soft mint eco green */
-}
-
-/* low battery warning blink animation */
 @keyframes blink {
     to {
         color: #1c2024;

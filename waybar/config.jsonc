@@ -3,47 +3,53 @@
     "position": "bottom",
     "height": 30,
     "spacing": 0,
-
-    "modules-left": ["niri/workspaces", "niri/window"],
-    "modules-center": ["disk", "cpu", "memory"],
-    "modules-right": ["network", "power-profiles-daemon", "battery", "custom/weather", "clock#date", "clock#time", "pulseaudio", "custom/power"],
-
+    "modules-left": [
+        "niri/workspaces",
+        "niri/window"
+    ],
+    "modules-center": [
+        "disk",
+        "cpu",
+        "memory"
+    ],
+    "modules-right": [
+        "network",
+        "power-profiles-daemon",
+        "battery",
+        "custom/weather",
+        "clock#date",
+        "clock#time",
+        "pulseaudio",
+        "custom/power"
+    ],
     "niri/workspaces": {
         "format": "{value}",
         "all-outputs": false
     },
-
     "niri/window": {
         "format": "{title}",
         "max-length": 50
     },
-
     "cpu": {
         "interval": 5,
-        "format": "󰍛 {usage}%"
+        "format": "󰻠 {usage}%"
     },
-
     "disk": {
         "interval": 30,
-        "format": " {percentage_used}%",
+        "format": "󰋊 {percentage_used}%",
         "path": "/"
     },
-
     "memory": {
         "interval": 5,
-        "format": "󰘚 {used:0.1f}/{total:0.1f} GB"
+        "format": "󰍛 {percentage}%"
     },
-
     "network": {
-        "format-wifi": "󰤨 {essid}",
-        "format-disconnected": "󰤮 Disconnected",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "tooltip-format-wifi": "{essid} ({signaldBm}dBm) "
+        "format-wifi": "󰖩 {essid}",
+        "format-ethernet": "󰈁 wired",
+        "format-disconnected": "󰖪 disconnected"
     },
-
     "power-profiles-daemon": {
         "format": "{icon}",
-        "tooltip-format": "power profile: {profile}\ndriver: {driver}",
         "tooltip": true,
         "format-icons": {
             "default": "󰓅",
@@ -52,46 +58,39 @@
             "power-saver": "󰾆"
         }
     },
-
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": "󱐋 {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
-
-    "clock#date": {
-        "interval": 60,
-        "format": "󰃭 {:%B%e, %Y}",
-        "on-click": "gnome-calendar"
-    },
-
-    "clock#time": {
-        "interval": 5,
-        "format": "󱑒 {:%H:%M}"
-    },
-
     "custom/weather": {
         "format": "{}",
         "return-type": "json",
-        "interval": 300, 
+        "interval": 300,
         "exec": "bash /home/judi/.scripts/waybar-weather.sh",
         "on-click": "gnome-weather"
     },
-
+    "clock#date": {
+    "interval": 60,
+    "format": "󰸗 {:%B %d, %Y}",
+    "on-click": "gnome-calendar"
+    },
+    "clock#time": {
+        "interval": 5,
+        "format": "󰥔 {:%H:%M}"
+    },
     "pulseaudio": {
         "format": "󰕾 {volume}%",
-        "format-muted": "󰝟 Muted",
+        "format-muted": "󰖁 muted",
         "on-click": "pavucontrol"
     },
-
     "custom/power": {
-        "format": "⏻",
+        "format": "󰐥",
         "tooltip": false,
         "on-click": "bash /home/judi/.scripts/powermenu.sh"
     }
