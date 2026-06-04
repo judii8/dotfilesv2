@@ -14,7 +14,6 @@
 | **shell** | bash |
 | **editor** | vscodium |
 | **browser** | firefox (w/ [nyan cat theme](https://addons.mozilla.org/en-US/firefox/addon/nyan-cat-animated/)) 🌈 |
-
 ---
 
 ## 🎨 aesthetics & apps
@@ -22,6 +21,7 @@
 * **wallpaper:** [wallhaven (choo choo edition)](https://wallhaven.cc/w/rrqpqw) 🚂
 * **fonts:** `FiraCode Nerd Font Mono` + `JetBrains Mono` (for that clean italic look)
 * **audio viz:** [cava](https://github.com/karlstav/cava) 📊
-* **pdf viewer:** [papers](https://apps.gnome.org/Papers/) (gnome)
-
+* **pdf viewer:** [gaze-pdf](https://github.com/judii8/gaze-pdf)
+* **image viewer:** [gaze](https://github.com/judii8/gaze)
+* **bar:** [waybar](https://github.com/Alexays/Waybar)
 ---
